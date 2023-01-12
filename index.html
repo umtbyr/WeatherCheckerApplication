@@ -7,12 +7,14 @@
     <title>Document</title>
     <link rel="stylesheet" href="style.css">
     <script src="app.js" defer></script>
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDQfwgXBvCv5pIRkABEBv98Z2r32g8i_jo"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=API_KEY"></script>
     
 </head>
 <body>
-    <button id="get-map" class="button">See Your Location and  Weather!</button>
-    <div id="googleMap" style="width:80%;height:400px;"></div>
+    <div class="container" id="container">
+        <button id="map-button" class="button">See Your Location and Weather Condition!</button>
+        <div id="googleMap" class="maps"></div>
+    </div>
 </body>
 </html>
 
