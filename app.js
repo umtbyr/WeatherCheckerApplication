@@ -25,8 +25,9 @@ createMap = () => {
     marker.setMap(map);
 
     getWeatherData().then((res) => {
+        console.log(res);
         console.log(res.data[0].weather.description);
-        createWeatherDescr(res.data[0].weather.description);
+        createWeatherDescr(res.data[0].weather.description, res.data[0].app_temp);
     });
 };
 
@@ -58,10 +59,10 @@ getWeatherData = async () => {
     return data;
 };
 
-createWeatherDescr = (descr) => {
+createWeatherDescr = (descr, temp) => {
     const body = document.querySelector('body');
     const weatherDescriptionEl = document.createElement('h2');
     weatherDescriptionEl.className = 'weather-condition';
-    weatherDescriptionEl.textContent = `Weather condition is ${descr} right now!`;
+    weatherDescriptionEl.textContent = `Weather condition is ${descr} right now! Temperature is ${temp.toFixed(0)} Celsius.`;
     body.insertAdjacentElement('afterbegin', weatherDescriptionEl);
 };
